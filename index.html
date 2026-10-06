@@ -23,13 +23,6 @@ p+p{margin-top:.8rem}
 .tag{font-size:1.05rem;text-transform:uppercase;margin-bottom:.8rem;color:#e6e3de}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center}
 .split.rev>:first-child{order:2}
-.cover{align-items:center;text-align:center;overflow:hidden;padding:0}
-.cover h1{font-size:28.8vw;position:absolute;top:calc(47% + 1.35vw);left:50%;transform:translate(-50%,-50%) scaleY(1.215);width:100%;text-align:center;line-height:.9;white-space:nowrap}
-.person{position:absolute;top:34.5%;left:48.2%;transform:translateX(-50%);width:23.9vw;aspect-ratio:315/562;z-index:2}
-.person img{height:100%;width:100%}
-.person i{position:absolute;top:1%;height:43.3%;width:15.8%;border:3px solid var(--fg);z-index:3}
-.person i:first-of-type{left:23%}.person i:last-of-type{left:58%}
-.cover .name{position:absolute;left:7vw;bottom:2.5rem;font-size:1.3rem;z-index:3}
 nav.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:.2rem 4vw;margin-top:1.5rem}
 nav.toc a{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(2.2rem,6vw,5rem);text-decoration:none;border-bottom:1px solid var(--line);padding:.2em 0;transition:padding .3s,color .3s}
 nav.toc a span{font-size:.4em;color:var(--dim);margin-right:.8rem;font-family:Arial}
@@ -60,6 +53,9 @@ ul.feat{columns:2;padding-left:1.1rem;margin:.6rem 0}
 #next svg{width:100%;height:100%;stroke:var(--fg);fill:none;stroke-width:1.5}
 #bar{position:fixed;left:0;top:0;height:3px;background:var(--fg);width:0;z-index:60}
 #top{position:fixed;left:5vw;top:1.4rem;z-index:50;font-family:'Bebas Neue',Impact;font-size:1.5rem;text-decoration:none;letter-spacing:.05em;mix-blend-mode:difference}
+.cover{padding:0;height:100vh;height:100svh;background:#232020}
+.cover img{width:100%;height:100%;object-fit:contain;display:block}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
@@ -69,7 +65,6 @@ ul.feat{columns:2;padding-left:1.1rem;margin:.6rem 0}
  .split.rev>:first-child{order:0}
  .right{text-align:left}
  ul.feat{columns:1}
- .person{width:52vw;top:40%}
  html{scroll-snap-type:none}
 }
 </style>
@@ -80,9 +75,8 @@ ul.feat{columns:2;padding-left:1.1rem;margin:.6rem 0}
 <button id="next" aria-label="Next section"><svg viewBox="0 0 90 20"><path d="M0 10H88M80 3l8 7-8 7"/></svg></button>
 
 <section id="home" class="cover">
-  <h1>PORTFOLIO</h1>
-  <div class="person"><img src="images/cover.png" alt="Dev Garg"><i></i><i></i></div>
-  <p class="name">Dev Garg</p>
+  <h1 class="sr">Dev Garg | Portfolio</h1>
+  <img src="images/cover-page.jpg" alt="Portfolio by Dev Garg">
 </section>
 
 <section id="contents">
