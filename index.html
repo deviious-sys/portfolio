@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dev Garg | Portfolio</title>
+<meta name="description" content="Portfolio of Dev Garg: I understand. I build. I improve.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#222120;--fg:#d2cfca;--dim:#a9a6a1;--line:rgba(210,207,202,.35)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity;background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+a{color:var(--fg)}
+h1,h2,h3{font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;font-weight:400;line-height:.95;letter-spacing:.01em}
+h2{font-size:clamp(3rem,9vw,8rem)}
+h3{font-size:1.6rem;font-family:Arial,sans-serif;font-weight:700;letter-spacing:0;margin-bottom:.6rem}
+section{min-height:100vh;min-height:100svh;scroll-snap-align:start;scroll-margin-top:0;display:flex;flex-direction:column;justify-content:center;padding:6rem 7vw 4rem;position:relative}
+img{max-width:100%;display:block}
+p+p{margin-top:.8rem}
+.tag{font-size:1.05rem;text-transform:uppercase;margin-bottom:.8rem;color:#e6e3de}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center}
+.split.rev>:first-child{order:2}
+.cover{align-items:center;text-align:center;overflow:hidden;padding:0}
+.cover h1{font-size:clamp(5rem,23vw,24rem);position:absolute;top:50%;left:50%;transform:translate(-50%,-62%);width:100%;text-align:center;line-height:.9}
+.cover img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:76vh;width:auto;z-index:2}
+.cover .name{position:absolute;left:7vw;bottom:2.5rem;font-size:1.3rem;z-index:3}
+nav.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:.2rem 4vw;margin-top:1.5rem}
+nav.toc a{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(2.2rem,6vw,5rem);text-decoration:none;border-bottom:1px solid var(--line);padding:.2em 0;transition:padding .3s,color .3s}
+nav.toc a span{font-size:.4em;color:var(--dim);margin-right:.8rem;font-family:Arial}
+nav.toc a:hover{padding-left:1rem;color:#fff}
+.banner{position:relative;width:100%;max-width:900px;margin:0 auto 1.5rem}
+.banner img{width:100%;height:clamp(180px,32vh,320px);object-fit:cover}
+.banner h2{position:absolute;bottom:-.25em;left:0;right:0;text-align:center;font-size:clamp(3rem,8vw,6.5rem)}
+.center{text-align:center;max-width:820px;margin:0 auto}
+.photo{width:100%;aspect-ratio:1;object-fit:cover}
+.years{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
+.years b{display:block;font-size:1.2rem}
+.hero-edu{width:100%;max-height:280px;object-fit:cover}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:center;margin-top:1.5rem}
+.row img{width:100%;max-height:300px;object-fit:cover}
+.right{text-align:right}
+.cut{max-height:62vh;margin:0 auto}
+.process{font-size:1.1rem;margin:.4rem 0 1rem}
+.shot{width:100%;max-height:60vh;object-fit:cover}
+.btn{display:inline-block;margin-top:1.2rem;border:1px solid var(--fg);padding:.7rem 1.4rem;text-decoration:none;text-transform:uppercase;letter-spacing:.08em;transition:background .3s,color .3s}
+.btn:hover{background:var(--fg);color:var(--bg)}
+ul.feat{columns:2;padding-left:1.1rem;margin:.6rem 0}
+.links a{display:block;font-size:clamp(1rem,2.2vw,1.6rem);margin:1.2rem 0;word-break:break-all}
+.links b{display:block;font-size:1rem;color:var(--dim)}
+#next{position:fixed;top:1.8rem;right:5vw;z-index:50;background:none;border:0;cursor:pointer;width:90px;height:20px;transition:transform .3s,opacity .4s}
+#next:hover{transform:translateX(8px)}
+#next svg{width:100%;height:100%;stroke:var(--fg);fill:none;stroke-width:1.5}
+#bar{position:fixed;left:0;top:0;height:3px;background:var(--fg);width:0;z-index:60}
+#top{position:fixed;left:5vw;top:1.4rem;z-index:50;font-family:'Bebas Neue',Impact;font-size:1.5rem;text-decoration:none;letter-spacing:.05em;mix-blend-mode:difference}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
+@media(max-width:800px){
+ section{padding:5rem 6vw 3rem}
+ .split,.years,.row,nav.toc{grid-template-columns:1fr}
+ .split.rev>:first-child{order:0}
+ .right{text-align:left}
+ ul.feat{columns:1}
+ .cover img{height:60vh}
+ html{scroll-snap-type:none}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<a id="top" href="#home">DG</a>
+<button id="next" aria-label="Next section"><svg viewBox="0 0 90 20"><path d="M0 10H88M80 3l8 7-8 7"/></svg></button>
+
+<section id="home" class="cover">
+  <h1>PORTFOLIO</h1>
+  <img src="images/cover.png" alt="Dev Garg">
+  <p class="name">Dev Garg</p>
+</section>
+
+<section id="contents">
+  <h2 class="rv">Table of Contents</h2>
+  <nav class="toc rv">
+    <a href="#intro"><span>01</span>Introduction</a>
+    <a href="#making"><span>04</span>Skills</a>
+    <a href="#thanks"><span>07</span>Thank You</a>
+    <a href="#education"><span>03</span>Education</a>
+    <a href="#projects"><span>05</span>Project Portfolio</a>
+    <a href="#contact"><span>06</span>Contact</a>
+    <a href="#about"><span>02</span>About Me</a>
+  </nav>
+</section>
+
+<section id="intro">
+  <div class="banner rv"><img src="images/intro.jpg" alt="Formula 1 car at speed"><h2>Introduction</h2></div>
+  <div class="center rv">
+    <p>From building things out of cardboard and experimenting with small projects, to learning guitar, training various sports, designing in CAD, writing software, and exploring physics, I've always found myself learning by doing.</p>
+    <p>I don't really like keeping my interests in separate boxes. I enjoy the process of taking something I don't understand, asking questions, figuring it out, and eventually making something of my own.</p>
+    <p>This portfolio is a collection of those things: the projects, skills, experiments, and pursuits that have shaped the way I learn and create.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="split">
+    <div class="rv">
+      <h2>Dev Garg</h2>
+      <p class="tag" style="margin-top:1.5rem">I've always been curious.</p>
+      <p>I've always been drawn to understanding how things work and then trying to make something of my own. From physics and engineering to music, training, building, software, my interests are varied, but they all come from the same place: curiosity.</p>
+      <p>I like learning by doing, figuring things out along the way, and seeing an idea become something real.</p>
+      <p class="tag" style="margin-top:1rem">I understand. I build. I improve.</p>
+    </div>
+    <img class="photo rv" src="images/about.jpg" alt="Dev Garg portrait">
+  </div>
+</section>
+
+<section id="education">
+  <div class="split rv" style="grid-template-columns:auto 1fr">
+    <h2>Education</h2>
+    <img class="hero-edu" src="images/education.jpg" alt="Graduation ceremony">
+  </div>
+  <div class="years rv">
+    <div><b>2024</b><h3>Grace Academy, Dehradun</h3><p>Completed Class X with an aggregate of 80%. With certificates of Merit in IT &amp; Hindi.</p></div>
+    <div><b>2026</b><h3>Grace Academy, Dehradun</h3><p>Completed Class XII with PCM and History as an optional subject, with an aggregate of 70%. With certificate of merit in English.</p></div>
+    <div><b>2030</b><h3>DIT University</h3><p>Currently pursuing Bachelor of Technology in Mechanical Engineering, with an expected graduation in 2030.</p></div>
+  </div>
+</section>
+
+<section id="making">
+  <h2 class="center rv">Skills &amp; Hobbies</h2>
+  <h3 class="rv" style="margin-top:1.5rem">Making</h3>
+  <p class="rv">I enjoy taking an idea from something that exists only in my head and turning it into something real. Whether I'm working with physical materials, designing something, or figuring out how something should work, I rely on problem solving, engineering thinking, and a willingness to experiment.</p>
+  <div class="row rv">
+    <img src="images/axe.jpg" alt="Handmade axe prop">
+    <img src="images/kunai.jpg" alt="Handmade kunai prop">
+    <img src="images/shield.jpg" alt="Handmade shield and axe">
+  </div>
+</section>
+
+<section id="music">
+  <h2 class="center rv">Skills &amp; Hobbies</h2>
+  <div class="split rv" style="margin-top:1.5rem">
+    <img class="cut" src="images/guitar.png" alt="Dev playing electric guitar">
+    <div class="right">
+      <h3>Music &amp; Guitar</h3>
+      <p class="tag">Nine years of playing.</p>
+      <p>I've been playing guitar for 9 years, teaching myself through practice, experimentation, and a lot of listening.</p>
+      <p>My interests in music are pretty broad, and I've explored everything from different genres and techniques to music theory and improvisation.</p>
+      <p>I particularly enjoy playing solos on electric guitar exploring phrasing, technique, and improvisation.</p>
+      <p>On acoustic guitar, I enjoy fingerstyle playing, where melody, harmony, and rhythm come together in a single performance.</p>
+    </div>
+  </div>
+</section>
+
+<section id="training">
+  <h2 class="center rv">Skills &amp; Hobbies</h2>
+  <h3 class="rv" style="margin-top:1.5rem;font-size:2rem">Training</h3>
+  <div class="split rv">
+    <div class="split" style="gap:1.5rem">
+      <img src="images/calisthenics.jpg" alt="Weighted calisthenics" style="max-height:55vh;object-fit:cover">
+      <div><h3>Weighted Calisthenics</h3><p>I've been training calisthenics for 3 years, with a focus on strength, body control, and progressive overload through weighted movements.</p></div>
+    </div>
+    <div class="split" style="gap:1.5rem">
+      <img src="images/boxing.jpg" alt="Boxing gold medal" style="max-height:55vh;object-fit:cover">
+      <div><h3>Boxing</h3><p>2024 Khel Mahakumbh Boxing Gold medalist in under 17 featherweight category.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="split">
+    <div class="rv">
+      <h2>Project<br>Portfolio</h2>
+      <p class="tag" style="margin-top:1.5rem">Things I've built, designed &amp; experimented with.</p>
+      <p>From physical builds to software and engineering projects, these are some of the things I've worked on to turn ideas into something tangible.</p>
+    </div>
+    <img class="cut rv" src="images/hero.png" alt="Dev Garg">
+  </div>
+</section>
+
+<section id="mclaren">
+  <h2 class="rv">The McLaren MP4/6</h2>
+  <p class="rv">Engineering reconstruction of the 1991 McLaren MP4/6 while understanding the engineering behind the machine.</p>
+  <h3 class="rv" style="margin-top:1rem">The Process</h3>
+  <p class="process rv">RESEARCH → SCALE → CAD → DESIGN → FABRICATION → REFINE</p>
+  <div class="split rv">
+    <img class="shot" src="images/cad.jpg" alt="CAD sketch of the MP4/6">
+    <div><h3>Research</h3><p>I started with existing models and blueprints of the McLaren MP4/6, to which later I modified and reconstructed in accordance to my purpose.</p><p>I made detailed sketches, studying the geometry and design of the car which helped me build a strong understanding of the key elements of the vehicle.</p></div>
+  </div>
+</section>
+
+<section id="scale">
+  <div class="split rv" style="grid-template-columns:1fr 1fr 1.6fr">
+    <img class="shot" src="images/templates.jpg" alt="Cardboard templates">
+    <div><h3>Scale</h3><p>I then scaled the new model to a 1:1 scale, taking reference from the official blueprints provided by the McLaren Racing team. I then sliced the model into printable templates using Pepakura Designer and made custom templates which I could then transfer onto cardboard to start the fabrication.</p></div>
+    <img class="shot" src="images/cardboard.jpg" alt="Cardboard nose cone">
+  </div>
+</section>
+
+<section id="fabrication">
+  <div class="split rv">
+    <div>
+      <img class="shot" src="images/build.jpg" alt="Cardboard build" style="margin-bottom:1.5rem">
+      <h3>Fabrication</h3>
+      <p>The fabrication of the car took me 4 months to complete, as I traced every piece and cut out every piece by hand. Once the fabrication was done, I proceeded with the filling and painting part of the project.</p>
+      <p>I encountered several challenges and problems while building this project, all of which I was able to overcome and complete this project.</p>
+    </div>
+    <div>
+      <p style="margin-bottom:1.5rem">From start to finish, the car took me 5 months to fully design, reconstruct, study, make templates, fabricate and paint. This project helped me enhance my designing and fabrication skills.</p>
+      <img class="shot" src="images/final.jpg" alt="Finished McLaren MP4/6 replica">
+    </div>
+  </div>
+</section>
+
+<section id="attendance">
+  <p class="tag rv">Personal web application</p>
+  <h2 class="rv">Attendance Tracker</h2>
+  <div class="split rv" style="align-items:start;margin-top:1.5rem">
+    <div>
+      <h3>The Problem</h3>
+      <p>Existing solutions didn't give me the flexibility I wanted for planning attendance across different subjects.</p>
+      <h3 style="margin-top:1.5rem">The Solution</h3>
+      <p>I built my own Progressive Web Application to track classes, attendance, and how many classes I could safely miss while maintaining the required attendance.</p>
+    </div>
+    <div>
+      <h3>Features</h3>
+      <ul class="feat"><li>Subject-wise tracking</li><li>Present / absent marking</li><li>Planned &amp; held classes</li><li>Attendance calculations</li><li>Minimum attendance tracking</li><li>Skippable-class planning</li><li>Progressive Web App</li></ul>
+      <a class="btn" href="https://deviious-sys.github.io/Attendance--75/" target="_blank" rel="noopener">View on GitHub →</a>
+    </div>
+  </div>
+</section>
+
+<section id="attendance-app">
+  <div class="split rv" style="grid-template-columns:.8fr 1.2fr">
+    <img src="images/attendance-app.jpg" alt="Attendance Tracker app on a phone" style="max-height:78vh;width:auto;max-width:100%;margin:0 auto;border-radius:18px;border:1px solid var(--line)">
+    <div>
+      <h3>How It Runs</h3>
+      <p>It runs from a GitHub repository as a website, and I installed it on my phone so it works like a regular app.</p>
+      <h3 style="margin-top:1.2rem">Emergency Buffer</h3>
+      <p>I added a setting for a safety-net number of classes. It is subtracted from the mathematically allowable misses, so the app never counts on me using every last one.</p>
+      <h3 style="margin-top:1.2rem">Also Added</h3>
+      <ul class="feat"><li>Emergency buffer</li><li>Classes needed to recover</li></ul>
+      <p style="margin-top:1.2rem">It took about 3-4 hours to set up, and I use it every day. It keeps my mind at ease.</p>
+    </div>
+  </div>
+</section>
+
+<section id="more" style="align-items:center;text-align:center">
+  <h2 class="rv" style="font-size:clamp(4rem,14vw,12rem)">More to come!</h2>
+  <p class="rv tag" style="margin-top:1.5rem">New projects will be added here.</p>
+</section>
+
+<section id="contact">
+  <h2 class="rv">Let's Connect.</h2>
+  <p class="rv" style="margin-top:1rem">Interested in my work, want to collaborate, or simply want to get in touch? You can find me here.</p>
+  <div class="links rv">
+    <a href="https://www.linkedin.com/in/dev-garg-92545a430" target="_blank" rel="noopener"><b>LinkedIn</b>www.linkedin.com/in/dev-garg-92545a430</a>
+    <a href="https://github.com/deviious-sys/DevGargPortfolio.github.io" target="_blank" rel="noopener"><b>GitHub</b>github.com/deviious-sys/DevGargPortfolio.github.io</a>
+    <a href="mailto:devseaofthieve@gmail.com"><b>Email</b>devseaofthieve@gmail.com</a>
+    <a href="https://www.upwork.com/freelancers/~01af25947f5c7086e2%20mp_source=share" target="_blank" rel="noopener"><b>Upwork</b>upwork.com/freelancers/~01af25947f5c7086e2</a>
+  </div>
+</section>
+
+<section id="thanks" style="align-items:center;text-align:center">
+  <h2 class="rv" style="font-size:clamp(4rem,16vw,14rem)">Thank You</h2>
+  <p class="rv"><a href="#home">Back to top ↑</a></p>
+</section>
+
+<script>
+const secs=[...document.querySelectorAll('section')],nx=document.getElementById('next'),bar=document.getElementById('bar');
+const cur=()=>{const y=scrollY+innerHeight*.4;let i=0;secs.forEach((s,k)=>{if(s.offsetTop<=y)i=k});return i};
+nx.onclick=()=>{const i=cur();if(secs[i+1])secs[i+1].scrollIntoView({behavior:'smooth'})};
+addEventListener('scroll',()=>{
+  bar.style.width=(scrollY/(document.documentElement.scrollHeight-innerHeight)*100)+'%';
+  nx.style.opacity=cur()>=secs.length-1?0:1;nx.style.pointerEvents=cur()>=secs.length-1?'none':'auto';
+},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
