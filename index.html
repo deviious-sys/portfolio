@@ -23,8 +23,8 @@ p+p{margin-top:.8rem}
 .tag{font-size:1.05rem;text-transform:uppercase;margin-bottom:.8rem;color:#e6e3de}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center}
 .split.rev>:first-child{order:2}
-nav.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:.2rem 4vw;margin-top:1.5rem}
-nav.toc a{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(2.2rem,6vw,5rem);text-decoration:none;border-bottom:1px solid var(--line);padding:.2em 0;transition:padding .3s,color .3s}
+nav.toc{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(4,auto);grid-auto-flow:column;gap:.2rem 4vw;margin-top:1.5rem}
+nav.toc a{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(2rem,4.6vw,4rem);text-decoration:none;border-bottom:1px solid var(--line);padding:.2em 0;transition:padding .3s,color .3s}
 nav.toc a span{font-size:.4em;color:var(--dim);margin-right:.8rem;font-family:Arial}
 nav.toc a:hover{padding-left:1rem;color:#fff}
 .banner{position:relative;width:100%;max-width:900px;margin:0 auto 1.5rem}
@@ -62,6 +62,7 @@ ul.feat{columns:2;padding-left:1.1rem;margin:.6rem 0}
 @media(max-width:800px){
  section{padding:5rem 6vw 3rem}
  .split,.years,.row,nav.toc{grid-template-columns:1fr}
+ nav.toc{grid-auto-flow:row;grid-template-rows:none}
  .split.rev>:first-child{order:0}
  .right{text-align:left}
  ul.feat{columns:1}
@@ -83,12 +84,12 @@ ul.feat{columns:2;padding-left:1.1rem;margin:.6rem 0}
   <h2 class="rv">Table of Contents</h2>
   <nav class="toc rv">
     <a href="#intro"><span>01</span>Introduction</a>
-    <a href="#making"><span>04</span>Skills</a>
-    <a href="#thanks"><span>07</span>Thank You</a>
+    <a href="#about"><span>02</span>About Me</a>
     <a href="#education"><span>03</span>Education</a>
+    <a href="#making"><span>04</span>Skills</a>
     <a href="#projects"><span>05</span>Project Portfolio</a>
     <a href="#contact"><span>06</span>Contact</a>
-    <a href="#about"><span>02</span>About Me</a>
+    <a href="#thanks"><span>07</span>Thank You</a>
   </nav>
 </section>
 
