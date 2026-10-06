@@ -24,27 +24,30 @@ p+p{margin-top:.8rem}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center}
 .split.rev>:first-child{order:2}
 .cover{align-items:center;text-align:center;overflow:hidden;padding:0}
-.cover h1{font-size:clamp(5rem,23vw,24rem);position:absolute;top:50%;left:50%;transform:translate(-50%,-62%);width:100%;text-align:center;line-height:.9}
-.cover img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:76vh;width:auto;z-index:2}
+.cover h1{font-size:28.8vw;position:absolute;top:47%;left:50%;transform:translate(-50%,-50%) scaleY(1.25);width:100%;text-align:center;line-height:.9;white-space:nowrap}
+.person{position:absolute;bottom:0;left:48%;transform:translateX(-50%);height:65.5vh;aspect-ratio:407/612;z-index:2}
+.person img{height:100%;width:100%}
+.person i{position:absolute;top:1.2%;height:52.4%;width:16.1%;border:3px solid var(--fg);z-index:3}
+.person i:first-of-type{left:23.2%}.person i:last-of-type{left:58.9%}
 .cover .name{position:absolute;left:7vw;bottom:2.5rem;font-size:1.3rem;z-index:3}
 nav.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:.2rem 4vw;margin-top:1.5rem}
 nav.toc a{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(2.2rem,6vw,5rem);text-decoration:none;border-bottom:1px solid var(--line);padding:.2em 0;transition:padding .3s,color .3s}
 nav.toc a span{font-size:.4em;color:var(--dim);margin-right:.8rem;font-family:Arial}
 nav.toc a:hover{padding-left:1rem;color:#fff}
 .banner{position:relative;width:100%;max-width:900px;margin:0 auto 1.5rem}
-.banner img{width:100%;height:clamp(180px,32vh,320px);object-fit:cover}
+.banner img{width:100%;aspect-ratio:2.78;object-fit:cover}
 .banner h2{position:absolute;bottom:-.25em;left:0;right:0;text-align:center;font-size:clamp(3rem,8vw,6.5rem)}
 .center{text-align:center;max-width:820px;margin:0 auto}
 .photo{width:100%;aspect-ratio:1;object-fit:cover}
 .years{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
 .years b{display:block;font-size:1.2rem}
-.hero-edu{width:100%;max-height:280px;object-fit:cover}
-.row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:center;margin-top:1.5rem}
-.row img{width:100%;max-height:300px;object-fit:cover}
+.hero-edu{width:100%;aspect-ratio:2.66;object-fit:cover}
+.row{display:grid;grid-template-columns:1.6fr 1fr 1.6fr;gap:1.5rem;align-items:center;margin-top:1.5rem}
+.row img{width:100%;height:auto}
 .right{text-align:right}
 .cut{max-height:62vh;margin:0 auto}
 .process{font-size:1.1rem;margin:.4rem 0 1rem}
-.shot{width:100%;max-height:60vh;object-fit:cover}
+.shot{width:100%;height:auto;object-fit:cover}
 .btn{display:inline-block;margin-top:1.2rem;border:1px solid var(--fg);padding:.7rem 1.4rem;text-decoration:none;text-transform:uppercase;letter-spacing:.08em;transition:background .3s,color .3s}
 .btn:hover{background:var(--fg);color:var(--bg)}
 ul.feat{columns:2;padding-left:1.1rem;margin:.6rem 0}
@@ -64,7 +67,7 @@ ul.feat{columns:2;padding-left:1.1rem;margin:.6rem 0}
  .split.rev>:first-child{order:0}
  .right{text-align:left}
  ul.feat{columns:1}
- .cover img{height:60vh}
+ .person{height:56vh}
  html{scroll-snap-type:none}
 }
 </style>
@@ -76,7 +79,7 @@ ul.feat{columns:2;padding-left:1.1rem;margin:.6rem 0}
 
 <section id="home" class="cover">
   <h1>PORTFOLIO</h1>
-  <img src="images/cover.png" alt="Dev Garg">
+  <div class="person"><img src="images/cover.png" alt="Dev Garg"><i></i><i></i></div>
   <p class="name">Dev Garg</p>
 </section>
 
@@ -132,9 +135,9 @@ ul.feat{columns:2;padding-left:1.1rem;margin:.6rem 0}
   <h3 class="rv" style="margin-top:1.5rem">Making</h3>
   <p class="rv">I enjoy taking an idea from something that exists only in my head and turning it into something real. Whether I'm working with physical materials, designing something, or figuring out how something should work, I rely on problem solving, engineering thinking, and a willingness to experiment.</p>
   <div class="row rv">
-    <img src="images/axe.jpg" alt="Handmade axe prop">
-    <img src="images/kunai.jpg" alt="Handmade kunai prop">
-    <img src="images/shield.jpg" alt="Handmade shield and axe">
+    <img src="images/axe.jpg" alt="Handmade axe prop" style="aspect-ratio:2.35">
+    <img src="images/kunai.jpg" alt="Handmade kunai prop" style="aspect-ratio:.84">
+    <img src="images/shield.jpg" alt="Handmade shield and axe" style="aspect-ratio:2">
   </div>
 </section>
 
@@ -158,11 +161,11 @@ ul.feat{columns:2;padding-left:1.1rem;margin:.6rem 0}
   <h3 class="rv" style="margin-top:1.5rem;font-size:2rem">Training</h3>
   <div class="split rv">
     <div class="split" style="gap:1.5rem">
-      <img src="images/calisthenics.jpg" alt="Weighted calisthenics" style="max-height:55vh;object-fit:cover">
+      <img src="images/calisthenics.jpg" alt="Weighted calisthenics" style="aspect-ratio:.8;object-fit:cover">
       <div><h3>Weighted Calisthenics</h3><p>I've been training calisthenics for 3 years, with a focus on strength, body control, and progressive overload through weighted movements.</p></div>
     </div>
     <div class="split" style="gap:1.5rem">
-      <img src="images/boxing.jpg" alt="Boxing gold medal" style="max-height:55vh;object-fit:cover">
+      <img src="images/boxing.jpg" alt="Boxing gold medal" style="aspect-ratio:.91;object-fit:cover">
       <div><h3>Boxing</h3><p>2024 Khel Mahakumbh Boxing Gold medalist in under 17 featherweight category.</p></div>
     </div>
   </div>
@@ -185,30 +188,30 @@ ul.feat{columns:2;padding-left:1.1rem;margin:.6rem 0}
   <h3 class="rv" style="margin-top:1rem">The Process</h3>
   <p class="process rv">RESEARCH → SCALE → CAD → DESIGN → FABRICATION → REFINE</p>
   <div class="split rv">
-    <img class="shot" src="images/cad.jpg" alt="CAD sketch of the MP4/6">
+    <img class="shot" src="images/cad.jpg" alt="CAD sketch of the MP4/6" style="aspect-ratio:16/9">
     <div><h3>Research</h3><p>I started with existing models and blueprints of the McLaren MP4/6, to which later I modified and reconstructed in accordance to my purpose.</p><p>I made detailed sketches, studying the geometry and design of the car which helped me build a strong understanding of the key elements of the vehicle.</p></div>
   </div>
 </section>
 
 <section id="scale">
   <div class="split rv" style="grid-template-columns:1fr 1fr 1.6fr">
-    <img class="shot" src="images/templates.jpg" alt="Cardboard templates">
+    <img class="shot" src="images/templates.jpg" alt="Cardboard templates" style="aspect-ratio:.6">
     <div><h3>Scale</h3><p>I then scaled the new model to a 1:1 scale, taking reference from the official blueprints provided by the McLaren Racing team. I then sliced the model into printable templates using Pepakura Designer and made custom templates which I could then transfer onto cardboard to start the fabrication.</p></div>
-    <img class="shot" src="images/cardboard.jpg" alt="Cardboard nose cone">
+    <img class="shot" src="images/cardboard.jpg" alt="Cardboard nose cone" style="aspect-ratio:4/3">
   </div>
 </section>
 
 <section id="fabrication">
   <div class="split rv">
     <div>
-      <img class="shot" src="images/build.jpg" alt="Cardboard build" style="margin-bottom:1.5rem">
+      <img class="shot" src="images/build.jpg" alt="Cardboard build" style="margin-bottom:1.5rem;aspect-ratio:1.88">
       <h3>Fabrication</h3>
       <p>The fabrication of the car took me 4 months to complete, as I traced every piece and cut out every piece by hand. Once the fabrication was done, I proceeded with the filling and painting part of the project.</p>
       <p>I encountered several challenges and problems while building this project, all of which I was able to overcome and complete this project.</p>
     </div>
     <div>
       <p style="margin-bottom:1.5rem">From start to finish, the car took me 5 months to fully design, reconstruct, study, make templates, fabricate and paint. This project helped me enhance my designing and fabrication skills.</p>
-      <img class="shot" src="images/final.jpg" alt="Finished McLaren MP4/6 replica">
+      <img class="shot" src="images/final.jpg" alt="Finished McLaren MP4/6 replica" style="aspect-ratio:1.82">
     </div>
   </div>
 </section>
